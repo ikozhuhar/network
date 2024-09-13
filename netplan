@@ -23,5 +23,7 @@ sudo netplan generate
 # Если вы хотите видеть более подробную информацию, используйте опцию --debug:
 sudo netplan --debug generate
 
+sudo systemctl restart systemd-networkd.service
+sudo systemctl restart NetworkManager
 sudo systemctl restart networking
 sudo /etc/init.d/networking restart
