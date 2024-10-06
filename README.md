@@ -7,3 +7,4 @@
 | ------- | ----------- |
 | `git status` | text text text text |
 | `lern text` | some text, some text, some text |
+| `lern text text` | some text, some text, some text, some text, some text, some text |
