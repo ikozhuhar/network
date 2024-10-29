@@ -10,3 +10,7 @@
 | `lern text text` | some text, some text, some text, some text, some text, some text |
 | `lern text` | some text, some text, some text |
 | `lern text` | some text, some text, some text |
+
+
+
+![image](https://github.com/user-attachments/assets/4dba0400-468f-48e5-9f58-cc9d4b1b0f79)
