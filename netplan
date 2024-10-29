@@ -14,6 +14,8 @@ network:
       nameservers:
           search: [mydomain, otherdomain]
           addresses: [10.10.10.1, 1.1.1.1]
+    enxa0a3f0a9b52a:
+      dhcp4: true
 
 sudo netplan apply
 # Если вы хотите видеть более подробную информацию, используйте опцию --debug:
