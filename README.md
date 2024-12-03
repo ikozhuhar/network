@@ -16,6 +16,7 @@
 
 ## Настройка на CentOS/AlmaLinux/Rockylinux
 
-![image](https://github.com/user-attachments/assets/fc9f451a-3f54-4d02-b1f6-be22062ca11a)
+![image](https://github.com/user-attachments/assets/331d1133-498e-4044-b302-014d8008b9fa)
+
 
 
