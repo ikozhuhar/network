@@ -24,8 +24,8 @@ systemctl restart network
 
 ```
 ip address {add|change|replace} IFADDR dev IFNAME [ LIFETIME ]
-ip address add 192.168.1.200/24 dev eth0
-ip route add default via 10.104.100.251 dev eno1
+ip address add 10.104.100.156/24 dev eth0
+ip route add default via 10.104.100.251 dev eth0
 ```
 
 ![image](https://github.com/user-attachments/assets/331d1133-498e-4044-b302-014d8008b9fa)
