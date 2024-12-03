@@ -16,6 +16,12 @@
 
 ## Настройка на CentOS/AlmaLinux/Rockylinux
 
+```
+sudo nano /etc/sysconfig/network-scripts/ifcfg-eth0
+sudo systemctl status network
+systemctl restart network
+```
+
 ![image](https://github.com/user-attachments/assets/331d1133-498e-4044-b302-014d8008b9fa)
 
 
