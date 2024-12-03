@@ -19,7 +19,7 @@
 ```
 sudo nano /etc/sysconfig/network-scripts/ifcfg-eth0
 sudo systemctl status network
-systemctl restart network
+sudo systemctl restart network
 ```
 
 ```
