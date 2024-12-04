@@ -4,11 +4,17 @@
 3. [system-connections](system-connections)
 
 ## Конфигурационные файлы в дистрибутивах Linux
+
+Смотрим названия сетевых интерфейсов
 ```
-/etc/net
-/etc/sysconfig/network-config
-/etc/NetworkManager/system-connection
-/etc/netplan
+ls /sys/class/net
+```
+
+```
+nano /etc/net/ifaces/eno1/options
+nano /etc/sysconfig/network-scripts/ifcfg-eth0
+nano /etc/NetworkManager/system-connection/Wired_connection1.nmconnection
+nano /etc/netplan/config.yaml
 ```
 
 
