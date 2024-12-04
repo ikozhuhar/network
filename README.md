@@ -3,6 +3,15 @@
 2. [netplan](netplan)
 3. [system-connections](system-connections)
 
+## Конфигурационные файлы в дистрибутивах Linux
+```
+/etc/net
+/etc/sysconfig/network-config
+/etc/NetworkManager/system-connection
+/etc/netplan
+```
+
+
 | Command | Description |
 | ------- | ----------- |
 | `git status` | text text text text |
