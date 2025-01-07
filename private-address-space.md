@@ -1,6 +1,4 @@
-### Private Address Space
-
-[rfc1918](https://datatracker.ietf.org/doc/html/rfc1918)
+### Private Address Space - [rfc1918](https://datatracker.ietf.org/doc/html/rfc1918)
 
 ```
 10.0.0.0        -   10.255.255.255  (10/8 prefix)
