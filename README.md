@@ -34,7 +34,6 @@ nano /etc/netplan/config.yaml
 ## Дополнительные маршруты в Альт Linux
 
 ```ruby
-[sudo] password for ikozhuhar:
 [connection]
 id=Проводное подключение 1
 uuid=cadf9c42-cfc8-30cc-8d5d-36114852d8eb
