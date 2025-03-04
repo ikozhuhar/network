@@ -17,11 +17,11 @@ ip route add 192.168.3.2 via 10.104.100.251 dev eno1
 ## Конфигурационные файлы в дистрибутивах Linux
 
 Смотрим названия сетевых интерфейсов
-```
+```ruby
 ls /sys/class/net
 ```
 
-```
+```ruby
 nano /etc/net/ifaces/eno1/options
 nano /etc/sysconfig/network-scripts/ifcfg-eth0
 nano /etc/NetworkManager/system-connection/Wired_connection1.nmconnection
@@ -33,7 +33,7 @@ nano /etc/netplan/config.yaml
 
 ## Дополнительные маршруты в Альт Linux
 
-```
+```ruby
 [sudo] password for ikozhuhar:
 [connection]
 id=Проводное подключение 1
@@ -66,13 +66,13 @@ method=auto
 
 ## Настройка на CentOS/AlmaLinux/Rockylinux
 
-```
+```ruby
 sudo nano /etc/sysconfig/network-scripts/ifcfg-eth0
 sudo systemctl status network
 sudo systemctl restart network
 ```
 
-```
+```ruby
 ip address {add|change|replace} IFADDR dev IFNAME [ LIFETIME ]
 ip address add 10.104.100.156/24 dev eth0
 ip route add default via 10.104.100.251 dev eth0
