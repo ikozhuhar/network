@@ -31,6 +31,39 @@ nano /etc/netplan/config.yaml
 ![image](https://github.com/user-attachments/assets/d85aae53-7928-4cc3-87aa-d9fe85e6f417)
 
 
+## Дополнительные маршруты в Альт Linux
+
+```
+[sudo] password for ikozhuhar:
+[connection]
+id=Проводное подключение 1
+uuid=cadf9c42-cfc8-30cc-8d5d-36114852d8eb
+type=ethernet
+autoconnect-priority=-999
+interface-name=eno1
+timestamp=1741088449
+
+[ethernet]
+
+[ipv4]
+address1=10.104.100.156/24,10.104.100.251
+dns=10.104.110.23;172.25.128.10;
+method=manual
+route1=10.104.200.0/21,10.104.100.1
+route2=10.104.208.0/21,10.104.100.1
+
+[ipv6]
+addr-gen-mode=stable-privacy
+method=auto
+
+[proxy]
+
+```
+
+![image](https://github.com/user-attachments/assets/d70d2dea-fff3-4664-9cbe-b095efde28c7)
+
+
+
 ## Настройка на CentOS/AlmaLinux/Rockylinux
 
 ```
