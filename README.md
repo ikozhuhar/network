@@ -4,6 +4,8 @@
 3. [system-connections](system-connections)
 
 ```ruby
+# sudo ip route change <destination_network> [via <gateway_ip>] [dev <interface>] [proto <protocol>]
+
 # Маршрут до сети 192.168.3.0/24 через шлюз 192.168.0.1 и интерфейс eth0 с метрикой 100
 route add -net 192.168.3.0 netmask 255.255.255.0 gw 192.168.0.1 dev eth0 metric 100
 
