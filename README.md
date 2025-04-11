@@ -82,15 +82,14 @@ ip route add default via 10.104.100.251 dev eth0
 
 ![image](https://github.com/user-attachments/assets/331d1133-498e-4044-b302-014d8008b9fa)
 
-<br>
+
+
 
 ## Настройка на Astra Linux
 
 ![image](https://github.com/user-attachments/assets/f55df749-9d1c-41fd-a7f2-fa2ff1cecc0c)
 
 
-
-<br>
 
 **Маршрутизация в Linux** необходима, чтобы компьютеры могли определить, по какой цепочке должен пойти пакет, чтобы достигнуть цели. Маршруты можно настроить на уровне интерфейса или маршрутизатора.
 
