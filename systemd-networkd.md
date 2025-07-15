@@ -16,10 +16,10 @@ NTP=time.google.com
 # Если нужно использовать DHCP, оставить только параметр DHCP=yes  
 ```
 
-В секции [Match] можно указать имя сетевого интерфейса (можно получить с помощью команды ip a). В одной секции [Match] может быть несколько условий — сетевой профиль применится, если выполнены все условия из этой секции.
+В секции `[Match]` можно указать имя сетевого интерфейса (можно получить с помощью команды ip a). В одной секции `[Match]` может быть несколько условий — сетевой профиль применится, если выполнены все условия из этой секции.
 
-Включить службу systemd-networkd: sudo systemctl enable systemd-networkd.
-Запустить службу: sudo systemctl start systemd-networkd.
-Проверить статус сетевых интерфейсов: networkctl list.
-Вывести сетевые настройки: networkctl status.
-После внесения изменения в конфигурационные файлы нужно перезапускать systemd-networkd: sudo systemctl restart systemd-networkd.
+Включить службу systemd-networkd: `sudo systemctl enable systemd-networkd`.  
+Запустить службу: `sudo systemctl start systemd-networkd`.  
+Проверить статус сетевых интерфейсов: `networkctl list`.  
+Вывести сетевые настройки: `networkctl status`.  
+После внесения изменения в конфигурационные файлы нужно перезапускать systemd-networkd: `sudo systemctl restart systemd-networkd`.
