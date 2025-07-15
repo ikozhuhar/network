@@ -22,4 +22,4 @@ NTP=time.google.com
 Запустить службу: `sudo systemctl start systemd-networkd`.  
 Проверить статус сетевых интерфейсов: `networkctl list`.  
 Вывести сетевые настройки: `networkctl status`.  
-После внесения изменения в конфигурационные файлы нужно перезапускать systemd-networkd: `sudo systemctl restart systemd-networkd`.
+После изменений в конфигурационных файлах перезапускаем: `sudo systemctl restart systemd-networkd`.
