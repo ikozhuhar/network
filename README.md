@@ -3,6 +3,211 @@
 2. [netplan](netplan)
 3. [system-connections](system-connections)
 
+
+Сетевые службы и инструменты в Linux
+
+В Linux существует множество сетвевых служб и инструментов для работы с интернетом, начиная от базовых сетевых настроек и заканчивая специализированными сервисами. Вот основные из них:
+
+#### :white_check_mark: 1. Сетевые службы и инструменты
+
+`1.1` NetworkManager – универсальный инструмент для управления проводными, беспроводными, VPN и мобильными подключениями. Поддерживает графический интерфейс и командную строку (nmcli).
+`1.2` Netplan (Ubuntu/Debian) – это фронтенд (генератор конфигураций), который преобразует YAML-файлы (/etc/netplan/*.yaml) в настройки для низкоуровневых сетевых демонов.
+`1.3` Networking ifupdown – традиционный способ настройки сети через файл /etc/network/interfaces (используется в старых версиях Debian/Ubuntu).
+`1.4` Systemd-networkd – альтернатива NetworkManager для управления сетью через systemd. Пример конфига (/etc/systemd/network/20-wired.network)
+
+
+#### :white_check_mark: 2. DNS-сервисы
+
+`2.1` resolv.conf – файл для ручного указания DNS-серверов (/etc/resolv.conf).
+`2.2` systemd-resolved – системный DNS-резолвер, кэширующий запросы.
+`2.3` dnsmasq – лёгкий DNS- и DHCP-сервер, часто используется в роутерах.
+
+
+#### :white_check_mark: 3. Прокси и NAT
+
+`3.1` Squid – прокси-сервер для кэширования трафика и контроля доступа.
+`3.2` iptables/nftables – настройка NAT и межсетевого экрана для общего доступа в интернет.
+`3.3` Firewalld – более удобный фронтенд для управления правилами firewall.
+
+
+#### :white_check_mark: 4. Беспроводные сети
+
+`4.1` iwconfig/iwlist – инструменты для управления Wi-Fi (устаревшие, заменяются на iw).
+`4.2` wpa_supplicant – демон для подключения к защищённым Wi-Fi сетям.
+`4.3` NetworkManager – поддерживает настройку Wi-Fi через GUI и CLI.
+
+
+#### :white_check_mark: 5. Утилиты диагностики
+
+`5.1` ping/traceroute – проверка доступности узлов и маршрутов.
+`5.2` dig/nslookup – DNS-запросы.
+`5.3` netstat/ss – мониторинг сетевых соединений.
+`5.4` mtr – комбинация ping и traceroute.
+
+
+#### Ключевые различия между NetworkManager, networking (ifupdown) и systemd-networkd:
+
+
+#### :white_check_mark: 1. NetworkManager
+
+_Для чего:_ 
+- Управление сетью в десктопных и мобильных системах (удобен для Wi-Fi, VPN, PPPoE).
+
+_Где используется:_ 
+- Ubuntu Desktop, Fedora, RHEL Workstation.
+
+_Особенности:_ 
+
+- Поддержка графического интерфейса (GUI) и CLI (nmcli, nmtui).
+- Автоматическое переподключение при сбоях.
+- Управляет Wi-Fi, Bluetooth, модемами, VPN (OpenVPN, WireGuard, PPTP).
+- Интегрируется с DHCP (dhclient или internal).
+- Конфиги хранятся в /etc/NetworkManager/.
+	
+_Пример конфига (/etc/NetworkManager/system-connections/'Wired connection 1.nmconnection'):_
+
+```ruby
+[connection]
+id=Wired connection 1
+uuid=16048739-faa0-3967-b7e4-6e952473dc87
+type=ethernet
+autoconnect-priority=-999
+interface-name=ens160
+timestamp=1746605081
+zone=public
+
+[ethernet]
+
+[ipv4]
+address1=192.168.11.124/24,192.168.11.1
+dns=192.168.2.3;192.168.2.6;
+ignore-auto-dns=true
+method=manual
+
+[ipv6]
+addr-gen-mode=stable-privacy
+method=auto
+
+[proxy]
+```
+
+_Когда использовать?_  
+- На ноутбуках и ПК с динамическим подключением (Wi-Fi, мобильные сети).
+- Если нужен удобный интерфейс для переключения сетей.
+
+
+
+#### :white_check_mark: 2. Systemd-networkd
+
+_Для чего:_   
+- Современный, легковесный менеджер сетей от systemd.
+
+_Где используется:_  
+- Ubuntu Server, Arch Linux, Fedora Server.
+
+_Особенности:_  
+- Интегрирован с systemd (использует systemd-resolved для DNS).
+- Конфигурация через .network и .netdev файлы (в /etc/systemd/network/20-wired.network).
+- Поддержка VLAN, мостов, bonding, DHCP (systemd-networkd включает встроенный DHCP-клиент).
+- Нет GUI, только конфиги и networkctl.
+- Работает вместе с systemd-resolved (кэширование DNS).
+	
+_Пример конфига (/etc/systemd/network/20-wired.network):_
+
+```ruby
+[Match]
+Name=eth0
+
+[Network]
+DHCP=yes
+# или статический IP:
+# Address=192.168.1.10/24
+# Gateway=192.168.1.1
+# DNS=8.8.8.8
+```
+
+_Когда использовать?_  
+- На серверах и в минималистичных системах.
+- Если нужна простая, но мощная альтернатива NetworkManager.
+
+
+
+#### :white_check_mark: 3. Networking (Устарел, но ещё встречается в Debian/Ubuntu без systemd-networkd)
+
+_Для чего:_  
+- Традиционный способ настройки сети через скрипты.
+	
+_Где используется:_   
+- Старые версии Debian/Ubuntu (до перехода на Netplan).
+
+_Особенности:_  
+- Работает через /etc/network/interfaces.
+- Использует команды ifup, ifdown.
+- Нет поддержки Wi-Fi (только базовый Ethernet, мосты, VLAN).
+- Нет автоматического восстановления связи.
+- Зависит от dhclient для DHCP.
+	
+_Пример конфига: /etc/network/interfaces_  
+
+```ruby
+auto eth0
+iface eth0 inet dhcp
+# или статический IP:
+# iface eth0 inet static
+# address 192.168.1.10
+# netmask 255.255.255.0
+# gateway 192.168.1.1
+```
+
+_Когда использовать?_  
+- На серверах с простой статической настройкой.
+- В минималистичных системах без NetworkManager.
+
+
+
+#### :white_check_mark: 4. Какой выбрать?
+
+- Для десктопа / ноутбука → NetworkManager (удобство, Wi-Fi, VPN).  
+- Для сервера → systemd-networkd (легковесный, стабильный).  
+- Для legacy-систем → networking (ifupdown) (если нет systemd).  
+
+⚠️ Важно:  
+- Нельзя использовать NetworkManager и systemd-networkd одновременно (будут конфликты).
+- Netplan – это надстройка, которая может работать с systemd-networkd или NetworkManager.
+- Если сомневаетесь, на серверах лучше выбирать systemd-networkd, а на ПК – NetworkManager.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ```ruby
 # ip route { add | del | change} <dest_network> [via <gateway_ip>] [dev <interface>] [proto <protocol>]
 
