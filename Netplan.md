@@ -1,7 +1,7 @@
 Netplan (Ubuntu/Debian) – `это фронтенд` (генератор конфигураций), который преобразует YAML-файлы (/etc/netplan/*.yaml) в настройки `для низкоуровневых сетевых демонов`. Может работать с разными бэкендами, включая `systemd-networkd и NetworkManager`, но по умолчанию в серверных дистрибутивах (например, Ubuntu Server) он использует именно systemd-networkd. 
 
 
-### Как Netplan взаимодействует с демонами?
+#### :white_check_mark: Как Netplan взаимодействует с демонами?
 
 В зависимости от указанного рендерера (renderer), Netplan передаёт управление:
 
@@ -33,7 +33,7 @@ network:
           addresses: [10.10.10.1, 1.1.1.1]
 ```	  
 	  
-### Как проверить, что Netplan использует systemd-networkd?
+#### :white_check_mark: Как проверить, что Netplan использует systemd-networkd?
 
 Посмотрите рендерер в конфиге Netplan:
 
@@ -41,19 +41,19 @@ network:
 cat /etc/netplan/*.yaml | grep "renderer:"
 ```
 
-### Проверьте статус systemd-networkd:
+#### :white_check_mark: Проверьте статус systemd-networkd:
 
 ```ruby
 systemctl status systemd-networkd
 ```
 
-### Убедитесь, что сетевые интерфейсы управляются systemd-networkd:
+#### :white_check_mark: Убедитесь, что сетевые интерфейсы управляются systemd-networkd:
 
 ```ruby
 networkctl list
 ```
 
-### Важные моменты
+#### :white_check_mark: Важные моменты
 
 Если в Netplan указан renderer: networkd, но systemd-networkd не запущен, сеть не будет работать.
 
@@ -77,6 +77,6 @@ sudo systemctl restart NetworkManager
 sudo /etc/init.d/networking restart
 ```
 
-### Вывод
+#### :white_check_mark: Вывод
 
 Netplan ≠ systemd-networkd, но они тесно связаны: Netplan генерирует конфиги, а systemd-networkd их исполняет. Если вы используете Netplan с рендерером networkd, убедитесь, что systemd-networkd активен, а NetworkManager отключён.
