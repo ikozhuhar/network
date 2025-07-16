@@ -1,6 +1,22 @@
 ### Настройка сети в systemd-networkd
 
 ```ruby
+# Пример 1: Простая DHCP-настройка
+sudo nano /etc/systemd/network/20-wired.network
+
+[Match]
+Name=eth0
+
+[Network]
+DHCP=yes
+
+# Что происходит?
+[Match] — говорит: «Работай только с интерфейсом eth0».
+[Network] — «Используй DHCP для получения IP».
+```
+
+
+```ruby
 sudo mcedit /etc/systemd/network/lan-static.network  
 [Match]  
 Name=ens33 
