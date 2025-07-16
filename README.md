@@ -173,7 +173,7 @@ _Когда использовать?_
 
 ⚠️ Важно:  
 - Нельзя использовать NetworkManager и systemd-networkd одновременно (будут конфликты).
-- Netplan – это надстройка, которая может работать с systemd-networkd или NetworkManager.
+- Netplan – это фронтенд, который преобразует (/etc/netplan/*.yaml) в настройки для низкоуровневых сетевых демонов. Может работать с systemd-networkd и NetworkManager.
 - Если сомневаетесь, на серверах лучше выбирать systemd-networkd, а на ПК – NetworkManager.
 
 
