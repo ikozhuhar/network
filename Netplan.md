@@ -23,6 +23,7 @@ _Файл /etc/netplan/01-netcfg.yaml (Ubuntu Server):_
 
 ```ruby
 # https://netplan.readthedocs.io/en/stable/examples/
+# https://www.dmosk.ru/miniinstruktions.php?mini=network-netplan&ysclid=md60rcnxjb68280961
 # Static IP address assignment
 
 yaml
