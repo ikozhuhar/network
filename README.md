@@ -174,7 +174,7 @@ _Когда использовать?_
 - Для сервера → systemd-networkd (легковесный, стабильный).  
 - Для legacy-систем → networking (ifupdown) (если нет systemd).  
 
-⚠️ Важно:  
+⚠️ **Важно**:  
 - Нельзя использовать NetworkManager и systemd-networkd одновременно (будут конфликты).
 - Netplan – это фронтенд, для сетевых демонов. Может работать с systemd-networkd и NetworkManager.
 - Если сомневаетесь, на серверах лучше выбирать systemd-networkd, а на ПК – NetworkManager.
