@@ -1,6 +1,15 @@
 Netplan (Ubuntu/Debian) – `это фронтенд` (генератор конфигураций), который преобразует YAML-файлы (/etc/netplan/*.yaml) в настройки `для низкоуровневых сетевых демонов`. Может работать с разными бэкендами, включая `systemd-networkd и NetworkManager`, но по умолчанию в серверных дистрибутивах (например, Ubuntu Server) он использует именно systemd-networkd. 
 
 
+#### :white_check_mark: Основные низкоуровневые сетевые демоны
+
+1. systemd-networkd
+2. NetworkManager (в режиме без GUI)
+3. dhcpcd
+4. wpa_supplicant
+5. ifupdown (networking.service)
+
+
 #### :white_check_mark: Как Netplan взаимодействует с демонами?
 
 В зависимости от указанного рендерера (renderer), Netplan передаёт управление:
