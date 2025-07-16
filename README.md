@@ -45,7 +45,7 @@
 `5.4` mtr – комбинация ping и traceroute.  
 
 
-#### Ключевые различия между NetworkManager, networking (ifupdown) и systemd-networkd:
+#### Ключевые различия между Systemd-networkd, NetworkManager и networking (ifupdown):
 
 
 #### :white_check_mark: 1. Systemd-networkd
