@@ -1,6 +1,7 @@
 ### Команда добавляет статический маршрут в таблицу маршрутизации Linux.
 
 ```ruby
+# ip route { add | del | change} <dest_network> [via <gateway_ip>] [dev <interface>] [proto <protocol>]
 sudo ip route add 192.168.0.0/16 via 192.168.6.254 dev ens160
 
 1. sudo               # выполнение команды с правами root (так как изменение маршрутов требует повышенных привилегий)
