@@ -101,7 +101,7 @@ _Особенности:_
 - Интегрируется с DHCP (dhclient или internal).
 - Конфиги хранятся в /etc/NetworkManager/.
 	
-_Пример конфига (/etc/NetworkManager/system-connections/'Wired connection 1.nmconnection'):_
+_Пример конфига /etc/NetworkManager/system-connections/'Wired connection 1.nmconnection':_
 
 ```ruby
 [connection]
