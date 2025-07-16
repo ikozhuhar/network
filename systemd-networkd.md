@@ -51,6 +51,27 @@ networkctl list
 networkctl status
 ```
 
+
+### Продвинутое: Настройка VLAN
+
+Дополнительно создаём файл для VLAN-интерфейса:
+
+```ruby
+# /etc/systemd/network/30-vlan100.network
+[Match]
+Name=eth0.100
+
+[Network]
+Address=192.168.100.10/24
+```
+
+```ruby
+# Активируем:
+sudo networkctl reload
+```
+
+
+
 ### Траблшутинг: Когда сеть не работает
 
 Проблема 1: Интерфейс не поднялся
