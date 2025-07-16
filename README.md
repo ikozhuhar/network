@@ -12,7 +12,7 @@
 
 `1.1` `Systemd-networkd` – альтернатива NetworkManager для управления сетью через systemd. Пример конфига (/etc/systemd/network/20-wired.network).  
 `1.2` `NetworkManager` – универсальный инструмент для управления проводными, беспроводными, VPN и мобильными подключениями. Поддерживает графический интерфейс и командную строку (nmcli).  
-`1.3` `Networking` ifupdown – традиционный способ настройки сети через файл /etc/network/interfaces (используется в старых версиях Debian/Ubuntu). 
+`1.3` `Networking` ifupdown – традиционный способ настройки сети через файл /etc/network/interfaces (используется в старых версиях Debian/Ubuntu).   
 `1.4` `Netplan` (Ubuntu/Debian) – это фронтенд (генератор конфигураций), который преобразует YAML-файлы (/etc/netplan/*.yaml) в настройки для низкоуровневых сетевых демонов.   
 
 
