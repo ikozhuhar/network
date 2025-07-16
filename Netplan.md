@@ -10,7 +10,7 @@ Netplan (Ubuntu/Debian) – это фронтенд (генератор конф
 
 **Пример конфигурации Netplan для systemd-networkd**
 
-Файл /etc/netplan/01-netcfg.yaml (Ubuntu Server):
+_Файл /etc/netplan/01-netcfg.yaml (Ubuntu Server):_
 
 ```ruby
 # https://netplan.readthedocs.io/en/stable/examples/
@@ -37,16 +37,21 @@ network:
 
 Посмотрите рендерер в конфиге Netplan:
 
-bash
+```ruby
 cat /etc/netplan/*.yaml | grep "renderer:"
+```
 
 ### Проверьте статус systemd-networkd:
 
+```ruby
 systemctl status systemd-networkd
+```
 
 ### Убедитесь, что сетевые интерфейсы управляются systemd-networkd:
 
+```ruby
 networkctl list
+```
 
 ### Важные моменты
 
