@@ -45,13 +45,14 @@
 `5.4` mtr – комбинация ping и traceroute.  
 
 
-#### Ключевые различия между Systemd-networkd, NetworkManager и networking (ifupdown):
+#### Systemd-networkd, NetworkManager и Networking
 
 
 #### :white_check_mark: 1. Systemd-networkd
 
 _Для чего:_   
 - Современный, легковесный менеджер сетей от systemd.
+- Управляет сетевыми интерфейсами, DHCP, статическими IP, маршрутизацией.
 
 _Где используется:_  
 - Ubuntu Server, Arch Linux, Fedora Server.
@@ -63,7 +64,7 @@ _Особенности:_
 - Нет GUI, только конфиги и networkctl.
 - Работает вместе с systemd-resolved (кэширование DNS).
 	
-_Пример конфига (/etc/systemd/network/20-wired.network):_
+_Пример конфига /etc/systemd/network/20-wired.network:_
 
 ```ruby
 [Match]
@@ -87,6 +88,7 @@ _Когда использовать?_
 
 _Для чего:_ 
 - Управление сетью в десктопных и мобильных системах (удобен для Wi-Fi, VPN, PPPoE).
+- Обычно используется в десктопах, но может управлять сетью на серверах.
 
 _Где используется:_ 
 - Ubuntu Desktop, Fedora, RHEL Workstation.
@@ -132,13 +134,14 @@ _Когда использовать?_
 
 
 
-#### :white_check_mark: 3. Networking (Устарел, но ещё встречается в Debian/Ubuntu без systemd-networkd)
+#### :white_check_mark: 3. Networking
 
 _Для чего:_  
 - Традиционный способ настройки сети через скрипты.
+- Устарел, но ещё встречается в Debian/Ubuntu без systemd-networkd
 	
 _Где используется:_   
-- Старые версии Debian/Ubuntu (до перехода на Netplan).
+- Старые версии Debian/Ubuntu (до перехода на Netplan) без systemd-networkd.
 
 _Особенности:_  
 - Работает через /etc/network/interfaces.
