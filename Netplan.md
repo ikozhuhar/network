@@ -31,7 +31,7 @@ network:
   renderer: networkd  # использует systemd-networkd
   ethernets:
     eth0:
-      dhcp4: true
+      # dhcp4: true
       addresses:
         - 10.10.10.2/24
       routes:
