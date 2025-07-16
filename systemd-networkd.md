@@ -3,9 +3,10 @@
 Пример 1: Простая DHCP-настройка
 
 ```ruby
-# Пример 1: Простая DHCP-настройка
 sudo nano /etc/systemd/network/20-wired.network
+```
 
+```ruby
 [Match]
 Name=eth0
 
