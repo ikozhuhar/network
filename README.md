@@ -48,7 +48,42 @@
 #### Ключевые различия между NetworkManager, networking (ifupdown) и systemd-networkd:
 
 
-#### :white_check_mark: 1. NetworkManager
+#### :white_check_mark: 1. Systemd-networkd
+
+_Для чего:_   
+- Современный, легковесный менеджер сетей от systemd.
+
+_Где используется:_  
+- Ubuntu Server, Arch Linux, Fedora Server.
+
+_Особенности:_  
+- Интегрирован с systemd (использует systemd-resolved для DNS).
+- Конфигурация через .network и .netdev файлы (в /etc/systemd/network/20-wired.network).
+- Поддержка VLAN, мостов, bonding, DHCP (systemd-networkd включает встроенный DHCP-клиент).
+- Нет GUI, только конфиги и networkctl.
+- Работает вместе с systemd-resolved (кэширование DNS).
+	
+_Пример конфига (/etc/systemd/network/20-wired.network):_
+
+```ruby
+[Match]
+Name=eth0
+
+[Network]
+DHCP=yes
+# или статический IP:
+# Address=192.168.1.10/24
+# Gateway=192.168.1.1
+# DNS=8.8.8.8
+```
+
+_Когда использовать?_  
+- На серверах и в минималистичных системах.
+- Если нужна простая, но мощная альтернатива NetworkManager.
+
+
+
+#### :white_check_mark: 2. NetworkManager
 
 _Для чего:_ 
 - Управление сетью в десктопных и мобильных системах (удобен для Wi-Fi, VPN, PPPoE).
@@ -94,41 +129,6 @@ method=auto
 _Когда использовать?_  
 - На ноутбуках и ПК с динамическим подключением (Wi-Fi, мобильные сети).
 - Если нужен удобный интерфейс для переключения сетей.
-
-
-
-#### :white_check_mark: 2. Systemd-networkd
-
-_Для чего:_   
-- Современный, легковесный менеджер сетей от systemd.
-
-_Где используется:_  
-- Ubuntu Server, Arch Linux, Fedora Server.
-
-_Особенности:_  
-- Интегрирован с systemd (использует systemd-resolved для DNS).
-- Конфигурация через .network и .netdev файлы (в /etc/systemd/network/20-wired.network).
-- Поддержка VLAN, мостов, bonding, DHCP (systemd-networkd включает встроенный DHCP-клиент).
-- Нет GUI, только конфиги и networkctl.
-- Работает вместе с systemd-resolved (кэширование DNS).
-	
-_Пример конфига (/etc/systemd/network/20-wired.network):_
-
-```ruby
-[Match]
-Name=eth0
-
-[Network]
-DHCP=yes
-# или статический IP:
-# Address=192.168.1.10/24
-# Gateway=192.168.1.1
-# DNS=8.8.8.8
-```
-
-_Когда использовать?_  
-- На серверах и в минималистичных системах.
-- Если нужна простая, но мощная альтернатива NetworkManager.
 
 
 
