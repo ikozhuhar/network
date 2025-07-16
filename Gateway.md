@@ -5,11 +5,11 @@
 ip route { add | del | change} <dest_network> [via <gateway_ip>] [dev <interface>] [proto <protocol>]
 
 Опции:  
-- `{add | del | change}` — действие (добавить, удалить, изменить).  
-- `<dest_network>` — целевая сеть в формате `IP/маска`.  
-- `via <gateway_ip>` — (опционально) IP-адрес шлюза.  
-- `dev <interface>` — (опционально) сетевой интерфейс.  
-- `proto <protocol>` — (опционально) протокол (`static`, `dhcp`, `bootp` и др.).  
+{add | del | change}   # действие (добавить, удалить, изменить).  
+<dest_network>         # целевая сеть в формате `IP/маска`.  
+via <gateway_ip>       # (опционально) IP-адрес шлюза.  
+dev <interface>        # (опционально) сетевой интерфейс.  
+proto <protocol>       # (опционально) протокол (`static`, `dhcp`, `bootp` и др.).  
 
 
 # Добавление маршрута:
