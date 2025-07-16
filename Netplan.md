@@ -14,8 +14,8 @@ Netplan (Ubuntu/Debian) – `это фронтенд` (генератор кон
 
 В зависимости от указанного рендерера (renderer), Netplan передаёт управление:
 
-- renderer: networkd → настройки применяются через systemd-networkd (стандартный выбор для серверов).
-- renderer: NetworkManager → настройки передаются NetworkManager (обычно используется в десктопных системах).
+`renderer: networkd` → настройки применяются через systemd-networkd (стандартный выбор для серверов).  
+`renderer: NetworkManager` → настройки передаются NetworkManager (обычно используется в десктопных системах).  
 
 **Пример конфигурации Netplan для systemd-networkd**
 
