@@ -62,17 +62,18 @@ NetworkManager и systemd-networkd не должны работать однов
 После изменения конфига Netplan применяйте изменения:
 
 ```ruby
+sudo netplan try
 sudo netplan apply
+sudo netplan generate
+
 # Если вы хотите видеть более подробную информацию, используйте опцию --debug:
 sudo netplan --debug apply
-sudo netplan try
-sudo netplan generate
+
 # Если вы хотите видеть более подробную информацию, используйте опцию --debug:
 sudo netplan --debug generate
 
 sudo systemctl restart systemd-networkd.service
 sudo systemctl restart NetworkManager
-sudo systemctl restart networking
 sudo /etc/init.d/networking restart
 ```
 
