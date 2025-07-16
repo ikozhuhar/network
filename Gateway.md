@@ -4,7 +4,7 @@
 # Шаблон
 ip route { add | del | change} <dest_network> [via <gateway_ip>] [dev <interface>] [proto <protocol>]
 
-Опции:  
+# Опции:  
 {add | del | change}   # действие (добавить, удалить, изменить).  
 <dest_network>         # целевая сеть в формате `IP/маска`.  
 via <gateway_ip>       # (опционально) IP-адрес шлюза.  
