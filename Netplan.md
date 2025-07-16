@@ -5,9 +5,9 @@ Netplan (Ubuntu/Debian) – `это фронтенд` (генератор кон
 
 `1`. systemd-networkd  
 `2`. NetworkManager (в режиме без GUI)  
-3. dhcpcd
-4. wpa_supplicant
-5. ifupdown (networking.service)
+`3`. dhcpcd  
+`4`. wpa_supplicant  
+`5`. ifupdown (networking.service)  
 
 
 #### :white_check_mark: Как Netplan взаимодействует с демонами?
