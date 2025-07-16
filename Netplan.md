@@ -3,8 +3,8 @@ Netplan (Ubuntu/Debian) – `это фронтенд` (генератор кон
 
 #### :white_check_mark: Основные низкоуровневые сетевые демоны
 
-1. systemd-networkd
-2. NetworkManager (в режиме без GUI)
+`1`. systemd-networkd
+`2`. NetworkManager (в режиме без GUI)
 3. dhcpcd
 4. wpa_supplicant
 5. ifupdown (networking.service)
