@@ -3,12 +3,12 @@
 Пример 1: Простая DHCP-настройка
 
 ```ruby
-sudo nano /etc/systemd/network/20-wired.network
+sudo nano /etc/systemd/network/10-ens160.network
 ```
 
 ```ruby
 [Match]
-Name=eth0
+Name=ens160
 
 [Network]
 DHCP=yes
@@ -21,19 +21,19 @@ DHCP=yes
 
 # Активируем и проверяем
 sudo systemctl restart systemd-networkd
-ip addr show eth0 
+ip addr show ens160 
 ```
 
 Пример 2. Статический IP: Когда DHCP — это хаос, а вам нужен порядок
 
 ```ruby
-sudo nano /etc/systemd/network/20-static.network
+sudo nano /etc/systemd/network/10-ens160.network
 ```
 
 ```ruby
-sudo mcedit /etc/systemd/network/lan-static.network  
+sudo mcedit /etc/systemd/network/10-ens160.network  
 [Match]  
-Name=ens33 
+Name=ens160
 
 [Network]  
 Description=Local network  
@@ -59,7 +59,7 @@ networkctl status
 ```ruby
 # /etc/systemd/network/30-vlan100.network
 [Match]
-Name=eth0.100
+Name=ens160.100
 
 [Network]
 Address=192.168.100.10/24
