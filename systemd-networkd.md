@@ -31,7 +31,7 @@ sudo nano /etc/systemd/network/10-ens160.network
 ```
 
 ```ruby
-sudo mcedit /etc/systemd/network/10-ens160.network  
+sudo nano /etc/systemd/network/10-ens160.network  
 [Match]  
 Name=ens160
 
