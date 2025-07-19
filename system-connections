@@ -1,3 +1,4 @@
+```ruby
 # Wired connection 1.nmconnection при настройке через GUI
 
 [connection]
@@ -20,3 +21,4 @@ addr-gen-mode=stable-privacy
 method=auto
 
 [proxy]
+```
