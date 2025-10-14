@@ -37,12 +37,22 @@ Name=ens160
 
 [Network]  
 Description=Local network  
-Address=192.168.100.22/24  
-Gateway=192.168.100.1  
-DNS=192.168.100.10 192.168.110.10  
-Domains=vmblog.local  
-LinkLocalAddressing=no  
-NTP=time.google.com  
+Address=192.168.6.40/24
+Gateway=192.168.6.250 
+DNS=192.168.2.3 192.168.2.6
+Domains=mip.ru
+
+[Route]
+Gateway=192.168.6.254
+Destination=192.168.0.0/16
+
+[Route]
+Gateway=192.168.6.254
+Destination=172.16.0.0/16
+
+[Route]
+Gateway=192.168.6.254
+Destination=10.0.0.0/0  
 ```
 
 ```ruby
