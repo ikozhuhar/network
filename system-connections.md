@@ -26,6 +26,10 @@ method=auto
 Реальный пример на CentOS 9
 
 ```ruby
+vi /etc/NetworkManager/system-connections/ens192.nmconnection
+```
+
+```ruby
 [connection]
 id=ens192
 uuid=e659404e-d93e-331c-a872-0d11e3215c4a
