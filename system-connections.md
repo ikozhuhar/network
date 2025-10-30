@@ -1,4 +1,4 @@
-Реальный пример на CentOS 9
+:white_check_mark: _Задача: <a name='1'>Реальный пример на CentOS 9</a>_
 
 ```ruby
 # vi /etc/NetworkManager/system-connections/ens192.nmconnection
