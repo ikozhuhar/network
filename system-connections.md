@@ -19,6 +19,10 @@ dns-search=mip.ru;
 gateway=192.168.160.1
 method=manual
 
+routes1=192.168.0.0/16,192.168.6.254
+routes2=172.16.0.0/16,192.168.6.254
+routes3=10.0.0.0/8,192.168.6.254
+
 [ipv6]
 addr-gen-mode=eui64
 method=auto
