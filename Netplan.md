@@ -38,6 +38,12 @@ network:
       routes:
         - to: default
           via: 10.10.10.1
+        - to: 192.16.0.0/16
+          via: 192.168.6.254
+        - to: 172.16.0.0/16
+          via: 192.168.6.254
+        - to: 10.0.0.0/8
+          via: 192.168.6.254
       nameservers:
           search: [mydomain, otherdomain]
           addresses: [10.10.10.1, 1.1.1.1]
